@@ -1,9 +1,13 @@
 .about-box {
   padding: 20px;
-  height: 300px;
+  min-height: 300px;
 }
 
-.about-box:nth-child(even) {
+.about-box h1 {
+  margin-bottom: 10px;
+}
+
+.about-box:nth-child(odd) {
   background: #606060; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#393939, #616161); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#393939, #616161); /* For Opera 11.1 to 12.0 */
@@ -21,9 +25,70 @@
 .about-text {
   clear:both; 
 }
+.skill-box {
+
+}
+.skill {
+  margin-top: 20px;
+}
+
+.skill-meter {
+  height: 10px;
+  width: 100%;
+  background: white;
+}
+
+.competence {
+  height: 100%;
+  background: #085078; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #085078 , #85D8CE); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #085078 , #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+
+.rails-competence {
+  width: 70%;  
+}
+
+.javascript-competence {
+  width: 70%;
+}
+
+.html-competence {
+  width: 80%;
+}
+
+.css-competence {
+  width: 80%;
+}
 
 @media (max-width: 642px){
   .about-image-div {
     display: none;
   }  
+}
+
+@media (max-width: 767px) {
+  .skill {
+    margin-top: 5px;
+  }  
+}
+
+.project {
+  padding-left: 40px;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin: 15px;
+  cursor: default;
+}
+
+.project:hover {
+  background:#545454;
+}
+
+.project h2 {
+  margin-top: 10px;
+}
+
+.project p {
+  color: #CCCCCC;
 }
