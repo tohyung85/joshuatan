@@ -1,5 +1,5 @@
 .sidebar { 
-  background-image: url('http://demo.shapedpixels.com/seasonal-pro/wp-content/uploads/sites/6/2015/06/red-grapes.jpg'); 
+  background-image: url('/assets/aboutme.jpeg'); 
   background-repeat: repeat; 
   background-position: top center; 
   background-attachment: scroll; 
@@ -19,29 +19,90 @@
 }
 
 .sidebar:before {
-    content: '';
-    background: #000;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+  content: '';
+  background: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.sidebar-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .site-branding {
   color: white;
   font-family: 'Josefin Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;  
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70%;
+  padding:10px;
+}
+
+
+.site-branding > div {
+  margin-top: 15px;
+}
+
+.site-branding > nav {
+  margin-top: 15px;
 }
 
 .site-title {
   font-family: 'Playfair Display', serif;
   font-style: italic;
+  font-size: 50px;
+  min-width: 100%;
+}
+
+.social-menu ul{
+  display: flex;
+  justify-content: center;
+  margin:0;
+  padding: 0;
+}
+
+.site-navigation ul{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.site-navigation li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.social-menu li {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .site-branding a {
   color: white;
+}
+
+.site-branding a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.site-branding ul {
+  list-style: none;
 }
 
 @media (min-width: 992px){
@@ -50,4 +111,10 @@
       top: 0;
       width: 35%;
   }  
+
+  .site-navigation ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
