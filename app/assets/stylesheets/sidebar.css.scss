@@ -7,15 +7,15 @@
 }
 
 .sidebar {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #59626d;
-    text-align: center;
-    color: #ccc;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #59626d;
+  text-align: center;
+  color: #ccc;
 }
 
 .sidebar:before {
@@ -30,8 +30,18 @@
     z-index: 1;
 }
 
-.sidebar:before {
-  opacity: 0.4;
+.site-branding {
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.site-branding a {
+  color: white;
 }
 
 @media (min-width: 992px){
