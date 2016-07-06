@@ -33,7 +33,7 @@
 .skill-meter {
   height: 10px;
   width: 100%;
-  background: white;
+  background: #616161;
 }
 
 .competence {
@@ -79,8 +79,19 @@
   cursor: default;
 }
 
+.projects-box a {
+  color: white;
+
+}
+
+.projects-box a:hover, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .project:hover {
-  background:#545454;
+  cursor: pointer;
+  background:#545454;  
 }
 
 .project h2 {
