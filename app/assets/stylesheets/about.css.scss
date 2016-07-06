@@ -1,0 +1,29 @@
+.about-box {
+  padding: 20px;
+  height: 300px;
+}
+
+.about-box:nth-child(even) {
+  background: #606060; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#393939, #616161); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#393939, #616161); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#393939, #616161); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#393939, #616161); /* Standard syntax */
+  color: white;
+}
+
+.about-image {
+  max-width: 120px;
+  min-width: 95px;
+  border-radius: 100%;
+}
+
+.about-text {
+  clear:both; 
+}
+
+@media (max-width: 642px){
+  .about-image-div {
+    display: none;
+  }  
+}
