@@ -1,3 +1,7 @@
+.sidebar-index-background {
+  background-image: url('/assets/aboutme.jpeg'); 
+}
+
 .about-box {
   padding: 20px;
   min-height: 300px;
@@ -59,29 +63,37 @@
   width: 80%;
 }
 
-@media (max-width: 642px){
-  .about-image-div {
-    display: none;
-  }  
-}
-
-@media (max-width: 767px) {
-  .skill {
-    margin-top: 5px;
-  }  
-}
-
 .project {
-  padding-left: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 10px;
   border: 1px solid white;
   margin: 15px;
   cursor: default;
 }
 
+.projects-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-image{
+  display: flex;
+  align-items: center;
+}
+
+.project-image img{
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.projects-list {
+  width: 60%;
+}
+
 .projects-box a {
   color: white;
-
 }
 
 .projects-box a:hover, a:visited {
@@ -100,4 +112,24 @@
 
 .project p {
   color: #CCCCCC;
+}
+
+@media (max-width: 642px){
+  .about-image-div {
+    display: none;
+  }  
+}
+
+@media (max-width: 767px) {
+  .skill {
+    margin-top: 5px;
+  }  
+
+  .project-image {
+    display: none;
+  }
+
+  .projects-list {
+    width: 100%;
+  }
 }

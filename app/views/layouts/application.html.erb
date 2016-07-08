@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div class="sidebar">
+<div class="sidebar <%= @sidebar %>">
   <div class="sidebar-inner">           
     <header id="masthead" class="site-header">
       <div class="site-branding">
@@ -37,7 +37,7 @@
             <ul class="nav-menu">
               <li><a href="#">Blog</a></li>
               <li><a href="#">About Me</a></li>          
-              <li><a href="#">Contact</a>
+              <li><%= link_to 'Contact', contact_path %>
               </li>
             </ul>
           </nav>                               
@@ -48,8 +48,29 @@
 </div>
 
 <div class="site-content">
-  <%= yield %>
+  <div class="page-content">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+
+      <p class="footer-comments">Brought to you by Joshua</p>
+      
+      <div class= "footer-links">
+        <%= link_to 'Contact Me', contact_path %>
+      </div>
+      
+
+      <ul class="footer-social">
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      </ul>
+  </div>
 </div>
+
+
 
 </body>
 </html>
