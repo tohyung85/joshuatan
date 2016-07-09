@@ -13,6 +13,7 @@ $(function(){
     $(".project-image").html(replacement);
       $("img").on('load', function(){
         $(this).css('visibility', 'visible');
+        $(this).parent().children(".circularGcircle").hide();
       });
   });
 
