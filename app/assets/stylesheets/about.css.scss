@@ -1,5 +1,5 @@
 .about-container img {
-  visibility: hidden;
+  display: none;
 }
 .sidebar-index-background {
   background-image: url('/assets/aboutme.jpeg'); 
@@ -21,6 +21,18 @@
   background: -moz-linear-gradient(#393939, #616161); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#393939, #616161); /* Standard syntax */
   color: white;
+}
+
+.about-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-div .loading-circle{
+  max-width: 120px;
+  min-width: 95px;
+  min-height: 120px;
 }
 
 .about-image {
@@ -83,6 +95,12 @@
 .project-image{
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.project-image .loading-circle{
+  width: 350px;
+  height: 250px
 }
 
 .project-image img{

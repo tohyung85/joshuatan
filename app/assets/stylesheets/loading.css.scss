@@ -1,3 +1,9 @@
+.loading-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .circularGcircle{
   position:relative;
   width:58px;
@@ -7,7 +13,7 @@
 
 .circularG{
   position:absolute;
-  background-color:rgb(0,0,0);
+  background-color:white;
   width:14px;
   height:14px;
   border-radius:9px;
