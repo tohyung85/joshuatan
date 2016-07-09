@@ -7,6 +7,7 @@ $(function(){
     $(".project-image img").remove();
     var replacement = "<a href="+links[id]+"><img src="+imagePath+"/></a>";
     $(".project-image a").replaceWith(replacement);
+    alert('hi');
   });
 
 });
