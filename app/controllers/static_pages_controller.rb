@@ -4,5 +4,6 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @sidebar = 'sidebar-contact-background'
   end
 end

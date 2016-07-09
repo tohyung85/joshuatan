@@ -35,6 +35,9 @@ gem 'font-awesome-sass'
 # Install Rubocop
 gem 'rubocop', '~> 0.41.2', require: false
 
+# install Simpleform
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

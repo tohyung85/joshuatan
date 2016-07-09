@@ -1,0 +1,18 @@
+.contact-container {
+  padding: 0px;
+  margin-top: -20px;
+  background-image: url('/assets/contactBackground.jpg');
+  background-repeat: repeat; 
+  background-position: top center; 
+  background-attachment: scroll; 
+  background-size: cover;   
+  height: 90vh;
+}
+
+.contact-inner {
+  padding:20px;
+  background: rgba(128, 128, 128, 0.5);
+  font-weight: 400;
+  color: white;
+  min-height: 100%;
+}
