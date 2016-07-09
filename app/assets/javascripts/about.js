@@ -1,7 +1,7 @@
 $(function(){
   $("img").on('load', function(){
-    $(this).show();
-    $(this).parent().children(".loading-circle").hide();
+    //$(this).show();
+    //$(this).parent().children(".loading-circle").hide();
   });
 
   $(".project").mouseover(function(){
