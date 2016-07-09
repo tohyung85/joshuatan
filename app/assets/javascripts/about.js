@@ -1,4 +1,8 @@
 $(function(){
+  $('.about-box').addClass("hideme").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+  });
+
   $("img").on('load', function(){
     $(this).show();
     $(this).parent().children(".loading-circle").hide();
