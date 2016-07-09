@@ -42,11 +42,11 @@
     <h1>Projects</h1>
     <div class="projects-box">
       <div class="project-image">
-        <%= image_tag("flixter.jpeg") %>
+        <a href="https://jt-flixter.herokuapp.com"><%= image_tag("flixter.jpeg") %></a>
       </div>
-      <div class="projects-list">
+      <div class="projects-list" >
         <%= link_to("https://jt-flixter.herokuapp.com") do %>
-          <div class="project">
+          <div class="project" data-id="1">
             <h2>Flixter</h2>
             <p>Languages and Frameworks: Ruby, Rails, Javascript</p>
             <p>Online Games Tutorial Site</p>
@@ -54,7 +54,7 @@
         <% end %>
 
         <%= link_to("https://jt-todo.herokuapp.com/") do %>
-          <div class="project">
+          <div class="project" data-id="2">
             <h2>Todo List</h2>
             <p>Languages and Frameworks: Javascript</p>
             <p>Simple To-Do List</p>
@@ -62,7 +62,7 @@
         <% end %>
 
         <%= link_to("https://jt-gamershound.herokuapp.com") do %>
-          <div class="project">
+          <div class="project" data-id="3">
             <h2>Gamer's Haunts</h2>
             <p>Languages and Frameworks: Ruby, Rails</p>
             <p>Board Games Sharing App</p>
@@ -70,7 +70,7 @@
         <% end %>
 
         <%= link_to("http://codepen.io/tohyung85/full/rxEZKy/") do %>
-          <div class="project">
+          <div class="project" data-id="4">
             <h2>Game of Life</h2>
             <p>Languages and Frameworks: Javascript, ReactJS</p>
             <p>Conway's Game of Life App</p>
