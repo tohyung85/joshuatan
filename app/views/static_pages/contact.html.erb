@@ -4,8 +4,10 @@
     <br/><br/>
     <p class= "contact-text">Drop me a message...</p>
     <%= simple_form_for @contactMessage do |f| %>
-      <%= f.input :name %>
+      <%= f.input :name %>    
+      <br/>
       <%= f.input :email %>
+      <br/>
       <%= f.input :message %>
       <br/>
       <%= f.submit 'Send', class: 'btn btn-default btn-lg', id: 'contact-submit' %>
