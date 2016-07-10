@@ -55,6 +55,8 @@ group :development, :test do
   gem 'byebug'
   # Install Rspec
   gem 'rspec-rails', '~>3.4'
+  # Install Factory Girl
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do

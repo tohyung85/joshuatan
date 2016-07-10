@@ -8,12 +8,4 @@ RSpec.describe StaticPagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe 'static_pages#contact' do
-    render_views
-    it 'should display Contact Page on load' do
-      get :contact
-      expect(response).to have_http_status(:success)
-    end
-  end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
   get 'contact', to: 'static_pages#contact'
-  resources :contactmessages, only: :create
+  resources :contactmessages, only: [:create, :new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
