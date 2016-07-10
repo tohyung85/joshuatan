@@ -38,6 +38,9 @@ gem 'rubocop', '~> 0.41.2', require: false
 # install Simpleform
 gem 'simple_form'
 
+# Install Figaro
+gem 'figaro', '>= 1.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
