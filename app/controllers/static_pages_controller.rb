@@ -5,5 +5,6 @@ class StaticPagesController < ApplicationController
 
   def contact
     @sidebar = 'sidebar-contact-background'
+    @contactMessage = Contactmessage.new
   end
 end
