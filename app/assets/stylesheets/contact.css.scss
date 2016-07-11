@@ -79,3 +79,21 @@
 .contact-form {
   display: block;
 }
+
+.submission-thanks {
+  display: block;
+  text-align: center;
+}
+
+.submission-thanks a{
+  color: #7B7B7A;
+  font-size: 18px;
+}
+
+.submission-thanks a:hover {
+  color: black;
+}
+
+.hide-submission {
+  display: none;
+}

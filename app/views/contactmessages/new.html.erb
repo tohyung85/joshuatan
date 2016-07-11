@@ -13,6 +13,11 @@
       <br/>
       <%= f.submit 'Send', class: 'btn btn-default btn-lg', id: 'contact-submit' %>
     <% end %>
+    <div class=<%= @displaysubmission %>>
+      <h1>Thanks for the message!</h1>
+      <br/>
+      <%= link_to 'Click here to send another message', new_contactmessage_path %>
+    </div>
     <br/><br/>
     <p class= "contact-text">Or let's get in touch using...</p>
     <div class="contact-social">

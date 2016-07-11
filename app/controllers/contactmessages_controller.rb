@@ -5,6 +5,7 @@ class ContactmessagesController < ApplicationController
     if @contactmessage.valid?
       @contactmessage = Contactmessage.new
       @displayform = 'hide-form'
+      @displaysubmission = 'submission-thanks'
       render :new
     else
       render :new, status: :unprocessable_entity
@@ -14,6 +15,7 @@ class ContactmessagesController < ApplicationController
   def new
     @sidebar = 'sidebar-contact-background'
     @displayform = 'contact-form'
+    @displaysubmission = 'hide-submission'
     @contactmessage = Contactmessage.new
   end
 
