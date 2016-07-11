@@ -3,7 +3,9 @@ class ContactmessagesController < ApplicationController
     @sidebar = 'sidebar-contact-background'
     @contactmessage = Contactmessage.create(contactmessage_params)
     if @contactmessage.valid?
-      redirect_to new_contactmessage_path
+      @contactmessage = Contactmessage.new
+      @displayform = 'hide-form'
+      render :new
     else
       render :new, status: :unprocessable_entity
     end
@@ -11,6 +13,7 @@ class ContactmessagesController < ApplicationController
 
   def new
     @sidebar = 'sidebar-contact-background'
+    @displayform = 'contact-form'
     @contactmessage = Contactmessage.new
   end
 

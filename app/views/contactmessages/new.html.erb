@@ -1,9 +1,10 @@
+<%= javascript_include_tag 'contactpage' %>
 <div class="contact-container">
   <div class="contact-inner">
     <h1>Get in Touch!</h1>
     <br/><br/>
     <p class= "contact-text">Drop me a message...</p>
-    <%= simple_form_for @contactmessage do |f| %>
+    <%= simple_form_for @contactmessage, html: {class: @displayform} do |f| %>
       <%= f.input :name %>    
       <br/>
       <%= f.input :email %>

@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ContactmessagesController, type: :controller do
+  after(:each) do 
+    ActionMailer::Base.deliveries.clear
+  end
   describe 'contactmessages#new' do
     render_views
     it 'should display Contact Page on load' do
@@ -9,7 +12,7 @@ RSpec.describe ContactmessagesController, type: :controller do
     end
   end  
 
-  describe 'contactmessages#create' do 
+  describe 'contactmessages#creation' do 
     render_views
     it 'should create a new message in the database' do
       post :create, contactmessage: {
@@ -25,6 +28,15 @@ RSpec.describe ContactmessagesController, type: :controller do
       expect(message.email).to eq('testuser@gmail.com')
       expect(message.message).to eq('test message')
     end
+
+    it 'should send an email with the right specifications when message created' do
+      newcontactmessage = FactoryGirl.create(:contactmessage)
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+      expect(ActionMailer::Base.deliveries.first.to).to eq(['tantohyung@gmail.com'])
+      expect(ActionMailer::Base.deliveries.first.subject).to eq('Test User has sent you a message!')
+      expect(ActionMailer::Base.deliveries.first.from).to eq(['testuser@gmail.com'])
+    end    
 
     it 'should properly deal with name validation errors' do
       post :create, contactmessage: {
