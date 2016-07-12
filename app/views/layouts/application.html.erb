@@ -41,6 +41,9 @@
               <li><%= link_to 'About Me', root_path %></li>          
               <li><%= link_to 'Contact', new_contactmessage_path %>
               </li>
+              <% if admin_signed_in? %>
+              <li><%= link_to 'Admin Sign Out', destroy_admin_session_path, method: :delete %></li>
+              <% end %>          
             </ul>
           </nav>                               
         </div><!-- .site-navigation -->        
@@ -49,16 +52,15 @@
   </div><!-- .sidebar-inner -->
 </div>
 
-<% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
 
 <div class="site-content">
   <div class="page-content">
+    <% if notice.present? %>
+      <p class="notice alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>    
     <%= yield %>
   </div>
 
