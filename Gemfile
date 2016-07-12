@@ -41,6 +41,9 @@ gem 'simple_form'
 # Install Figaro
 gem 'figaro', '>= 1.0.0'
 
+# Install Devise
+gem 'devise', '>=3.2.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

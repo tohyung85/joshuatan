@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root 'static_pages#index'
   get 'contact', to: 'static_pages#contact'
   resources :contactmessages, only: [:create, :new]
