@@ -21,7 +21,7 @@ RSpec.describe ContactmessagesController, type: :controller do
         message: 'test message'
       }
 
-      expect(response).to redirect_to new_contactmessage_path
+      expect(response).to render_template(:new)
 
       message = Contactmessage.last
       expect(message.name).to eq('Test User')

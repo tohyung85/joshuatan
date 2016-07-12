@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   root 'static_pages#index'
-  get 'contact', to: 'static_pages#contact'
+  get 'admin', to: 'static_pages#admin'
   resources :contactmessages, only: [:create, :new]
   resources :blogposts, only: [:show]
   namespace :admin do

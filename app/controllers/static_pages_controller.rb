@@ -3,8 +3,7 @@ class StaticPagesController < ApplicationController
     @sidebar = 'sidebar-index-background'
   end
 
-  def contact
-    @sidebar = 'sidebar-contact-background'
-    @contactMessage = Contactmessage.new
+  def admin
+    
   end
 end

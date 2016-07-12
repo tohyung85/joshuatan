@@ -8,4 +8,12 @@ RSpec.describe StaticPagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'static_pages#admin' do
+    render_views
+    it 'should display admin landing page' do
+      get :admin
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
