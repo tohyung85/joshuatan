@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( about.js )
 Rails.application.config.assets.precompile += %w( contactpage.js )
 Rails.application.config.assets.precompile += %w( jquery.viewportchecker.min.js )
+Rails.application.config.assets.precompile += %w( ckeditor/* )
