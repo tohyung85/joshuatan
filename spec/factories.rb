@@ -4,4 +4,9 @@ FactoryGirl.define do
     email 'testuser@gmail.com'
     message 'test message'
   end
+
+  factory :admin do
+    email 'admin@gmail.com'
+    password 'secretPassword'
+  end
 end
