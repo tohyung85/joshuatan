@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :admins
   root 'static_pages#index'
-  get 'contact', to: 'static_pages#contact'
+  get 'admin', to: 'static_pages#admin'
   resources :contactmessages, only: [:create, :new]
+  resources :blogposts, only: [:show]
+  namespace :admin do
+    resources :blogposts, only: [:new, :create, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,10 +1,11 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_admin!, only: [:admin]
   def index
     @sidebar = 'sidebar-index-background'
   end
 
-  def contact
-    @sidebar = 'sidebar-contact-background'
-    @contactMessage = Contactmessage.new
+  def admin
+    @messages = Contactmessage.all
+    @blogposts = Blogpost.all
   end
 end

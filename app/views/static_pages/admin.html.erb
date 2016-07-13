@@ -1,0 +1,26 @@
+<div class='admin-box'>
+  <h1>Admin Page</h1>
+
+  <section class="messages-section">
+    <h2>Messages</h2>
+    <% @messages.each do |message|  %>
+      <div class='messsage-box'>
+        <p><%= message.message %></p>
+        <p><%= message.name %></p>
+        <p><%= message.email %></p>
+      </div>
+    <% end %>
+  </section>
+
+  <section class='blog-section'>
+    <h2>Blogs</h2>
+    <% @blogposts.each do |blogpost| %>
+      <div class='blogpost-box'>
+        <p><% blogpost.title %></p>
+        <%= link_to 'Edit Post', '#', class: 'btn btn-warning'%>
+        <%= link_to 'Delete Post', '#', class: 'btn btn-warning'%>
+      </div>
+    <% end %>
+    <%= link_to 'New Post', new_admin_blogpost_path, class: 'btn btn-success' %>
+  </section>
+</div>

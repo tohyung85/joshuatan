@@ -1,0 +1,12 @@
+<div class='admin-box'>
+  <h1>Create Post</h1>
+  <%= simple_form_for @blogpost, url: admin_blogposts_path, method: :post do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'FULL'}} %>
+    </br>
+     <%= f.submit 'Create', class: 'btn btn-success' %>
+  <% end %>
+</div>
+
+<%= Blogpost.last.title.html_safe %>
+<%= Blogpost.last.content.html_safe %>

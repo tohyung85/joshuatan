@@ -41,6 +41,21 @@ gem 'simple_form'
 # Install Figaro
 gem 'figaro', '>= 1.0.0'
 
+# Install Devise
+gem 'devise', '>=3.2.4'
+
+# Install CKEditor
+gem 'ckeditor'
+
+# Install Carrierwave
+gem 'carrierwave'
+
+# Install carrierwave-aws
+gem 'carrierwave-aws'
+
+# Install Minimagick
+gem 'mini_magick', '~>4.3.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
