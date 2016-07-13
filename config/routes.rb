@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admins
   root 'static_pages#index'
   get 'admin', to: 'static_pages#admin'
