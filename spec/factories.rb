@@ -9,4 +9,10 @@ FactoryGirl.define do
     email 'admin@gmail.com'
     password 'secretPassword'
   end
+
+  factory :blogpost do 
+    title 'Awesome Post'
+    content 'Somestuff'
+    category 'Others'
+  end
 end

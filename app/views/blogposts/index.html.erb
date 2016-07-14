@@ -1,0 +1,10 @@
+<div class="blog-box">
+  <h1>Posts list</h1>
+  <% @blogposts.each do |post| %>
+    <%= link_to (blogpost_path(post)) do %>
+      <%= post.title %>
+      <%= post.category %>
+      <%= post.updated_at %>
+    <% end %>
+  <% end %>
+</div>
