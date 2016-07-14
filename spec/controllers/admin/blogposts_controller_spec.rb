@@ -13,5 +13,17 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+    it 'should validate inputs' do 
+      admin = FactoryGirl.create(:admin)
+      sign_in admin
+      post :create, blogpost: {
+        title: '',
+        content: '',
+        category: '',        
+      }
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(Blogpost.count).to eq 0
+    end
+
   end  
 end

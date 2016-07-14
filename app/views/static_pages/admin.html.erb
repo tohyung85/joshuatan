@@ -16,7 +16,7 @@
     <h2>Blogs</h2>
     <% @blogposts.each do |blogpost| %>
       <div class='blogpost-box'>
-        <p><% blogpost.title %></p>
+        <p><%= blogpost.title %></p>
         <%= link_to 'Edit Post', '#', class: 'btn btn-warning'%>
         <%= link_to 'Delete Post', '#', class: 'btn btn-warning'%>
       </div>

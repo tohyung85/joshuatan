@@ -6,12 +6,16 @@ class Admin::BlogpostsController < ApplicationController
 
   def create
     @blogpost = Blogpost.create(blogpost_params)
-    redirect_to new_admin_blogpost_path
+    if @blogpost.valid?
+      redirect_to new_admin_blogpost_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def blogpost_params
-    params.require(:blogpost).permit(:title, :content)
+    params.require(:blogpost).permit(:title, :content, :category)
   end
 end
