@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get 'admin', to: 'static_pages#admin'
   resources :contactmessages, only: [:create, :new]
-  resources :blogposts, only: [:show]
+  resources :blogposts, only: [:show, :index]
   namespace :admin do
     resources :blogposts, only: [:new, :create, :update]
   end

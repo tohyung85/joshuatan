@@ -16,6 +16,6 @@ class Admin::BlogpostsController < ApplicationController
   private
 
   def blogpost_params
-    params.require(:blogpost).permit(:title, :content, :category)
+    params.require(:blogpost).permit(:title, :content, :category, :image)
   end
 end

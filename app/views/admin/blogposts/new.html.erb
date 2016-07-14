@@ -2,14 +2,10 @@
   <h1>Create Post</h1>
   <%= simple_form_for @blogpost, url: admin_blogposts_path, method: :post do |f| %>
     <%= f.input :title %>
+    <%= f.input :image %>
     <%= f.input :category, as: :select, collection: Blogpost::CATEGORIES %>
     <%= f.input :content, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'FULL'}} %>
     </br>
      <%= f.submit 'Create', class: 'btn btn-success' %>
   <% end %>
 </div>
-
-<% if Blogpost.last.present? %>
-<%= Blogpost.last.title.html_safe %>
-<%= Blogpost.last.content.html_safe %>
-<% end %>

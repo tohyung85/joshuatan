@@ -13,6 +13,9 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+  end  
+
+  describe 'blogposts#create' do 
     it 'should validate inputs' do 
       admin = FactoryGirl.create(:admin)
       sign_in admin
@@ -25,5 +28,15 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
       expect(Blogpost.count).to eq 0
     end
 
-  end  
+    it 'should require admin to be signed in' do 
+      post :create, blogpost: {
+        title: 'Hacked',
+        content: 'Inserting hack',
+        category: 'Naughty business',        
+      }
+      expect(response).to redirect_to new_admin_session_path
+      expect(Blogpost.count).to eq 0      
+    end
+
+  end
 end
