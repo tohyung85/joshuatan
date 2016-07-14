@@ -1,4 +1,5 @@
 <div class='blog-box'>
   <h1><%= @blogpost.title %></h1>
+  <%= image_tag @blogpost.image %>
   <%= @blogpost.content.html_safe %>
 </div>

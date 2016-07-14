@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714133138) do
+ActiveRecord::Schema.define(version: 20160714142527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160714133138) do
     t.integer  "row_order"
     t.string   "category"
     t.boolean  "published",  default: false
+    t.string   "image"
   end
 
   add_index "blogposts", ["id"], name: "index_blogposts_on_id", using: :btree
