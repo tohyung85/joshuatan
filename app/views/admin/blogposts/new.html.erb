@@ -8,8 +8,3 @@
      <%= f.submit 'Create', class: 'btn btn-success' %>
   <% end %>
 </div>
-
-<% if Blogpost.last.present? %>
-<%= Blogpost.last.title.html_safe %>
-<%= Blogpost.last.content.html_safe %>
-<% end %>
