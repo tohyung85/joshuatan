@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :contactmessages, only: [:create, :new]
   resources :blogposts, only: [:show, :index]
   namespace :admin do
-    resources :blogposts, only: [:new, :create, :update]
+    resources :blogposts, only: [:new, :create, :update, :edit, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

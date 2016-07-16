@@ -1,5 +1,14 @@
+  <div class='blog-header' style="background-image: url(<%= image_path(@blogpost.image)%>)">
+    <div class='blog-header-content' >
+      <h1><%= @blogpost.title %></h1>
+    </div>
+  </div>
+
 <div class='blog-box'>
-  <h1><%= @blogpost.title %></h1>
-  <%= image_tag @blogpost.image %>
-  <%= @blogpost.content.html_safe %>
+
+
+  
+  <div class='blog-content'>
+    <%= @blogpost.content.html_safe %>
+  </div>
 </div>

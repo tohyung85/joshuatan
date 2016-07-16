@@ -17,8 +17,8 @@
     <% @blogposts.each do |blogpost| %>
       <div class='blogpost-box'>
         <p><%= blogpost.title %></p>
-        <%= link_to 'Edit Post', '#', class: 'btn btn-warning'%>
-        <%= link_to 'Delete Post', '#', class: 'btn btn-warning'%>
+        <%= link_to 'Edit Post', edit_admin_blogpost_path(blogpost), class: 'btn btn-warning'%>
+        <%= link_to 'Delete Post', admin_blogpost_path(blogpost), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-warning'%>
       </div>
     <% end %>
     <%= link_to 'New Post', new_admin_blogpost_path, class: 'btn btn-success' %>
