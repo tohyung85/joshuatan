@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joshua Tan</title>
+  <meta name="viewport" content="initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,600italic,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.viewportchecker.min' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="sidebar <%= @sidebar %> mobile-hide">
+  <div class="sidebar-inner">            
+    <header id="masthead" class="site-header">
+      <div class="site-branding">
+        <div class="site-title"><%= link_to 'Joshua Tan', root_path %></div>                                                              
+        <div class="site-description">
+          <h2>Rails Web Developer</h2> 
+          <p>Turning your ideas into reality</p>
+        </div>
+
+        <nav class="social-menu" role="navigation">
+          <ul class="social">
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+                            
+        <div class="site-navigation">
+          <nav class="primary-navigation">
+            <ul class="nav-menu">
+              <li><%= link_to 'Blog', blogposts_path %></li>
+              <li><%= link_to 'About Me', root_path %></li>          
+              <li><%= link_to 'Contact', new_contactmessage_path %>
+              </li>
+              <% if admin_signed_in? %>
+              <li><%= link_to 'Admin Sign Out', destroy_admin_session_path, method: :delete %></li>
+              <% end %>          
+            </ul>
+          </nav>                               
+        </div><!-- .site-navigation -->        
+      </div><!-- .site-branding -->
+    </header><!-- .site-header -->            
+  </div><!-- .sidebar-inner -->
+</div>
+
+
+<div class="site-content">
+  <div class="page-content">
+    <% if notice.present? %>
+      <p class="notice alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>        
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+
+      <p class="footer-comments">Brought to you by Joshua</p>
+      
+      <div class= "footer-links">
+        <%= link_to 'Contact Me', new_contactmessage_path %>
+      </div>
+      
+
+      <ul class="footer-social">
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,6 +1,25 @@
   <div class='blog-header' style="background-image: url(<%= image_path(@blogpost.image)%>)">
     <div class='blog-header-content' >
-      <h1><%= @blogpost.title %></h1>
+      <div class="blog-site-navigation">
+        <nav class="blog-primary-navigation">
+          <ul class="blog-nav-menu">
+            <li><%= link_to 'Blog Index', blogposts_path %></li>
+            <li><%= link_to 'About Me', root_path %></li>          
+            <li><%= link_to 'Contact', new_contactmessage_path %>
+            </li>
+            <% if admin_signed_in? %>
+              <li><%= link_to 'Admin Sign Out', destroy_admin_session_path, method: :delete %></li>
+            <% end %>          
+          </ul>
+        </nav>                               
+      </div><!-- .site-navigation -->
+      <div class='blog-title-content'>
+        <h1><%= @blogpost.title %></h1>
+        <ul>
+          <li><%= @blogpost.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
+          <li>By Joshua Tan</li>
+        </ul>
+      </div>               
     </div>
   </div>
 
