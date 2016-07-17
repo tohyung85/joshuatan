@@ -21,5 +21,6 @@ $(function(){
         $(this).parent().children(".loading-circle").hide();
       });
   });
-
+  
+  console.log(CKEditor.version);
 });
