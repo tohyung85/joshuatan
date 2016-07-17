@@ -7,5 +7,6 @@ class StaticPagesController < ApplicationController
   def admin
     @messages = Contactmessage.all
     @blogposts = Blogpost.all
+    render(:layout => "layouts/blogposts")
   end
 end
