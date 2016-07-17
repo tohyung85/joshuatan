@@ -14,6 +14,8 @@ FactoryGirl.define do
     title 'Awesome Post'
     content 'Somestuff'
     category 'Others'
+    publish true
+    publish_date 'Jul 17, 2016'
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) }
   end
 end

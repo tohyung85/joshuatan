@@ -23,6 +23,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Hello',
         content: 'Somemore stuff',
         category: 'Others',
+        publish: true,
+        publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
       expect(response).to redirect_to admin_path
@@ -36,6 +38,9 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: '',
         content: '',
         category: '',        
+        publish: true,
+        publish_date: 'Jul 17 2016',
+        image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png'))         
       }
       expect(response).to have_http_status(:unprocessable_entity)
       expect(Blogpost.count).to eq 0
@@ -46,6 +51,9 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Hacked',
         content: 'Inserting hack',
         category: 'Naughty business',        
+        publish: true,
+        publish_date: 'Jul 17 2016',
+        image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png'))         
       }
       expect(response).to redirect_to new_admin_session_path
       expect(Blogpost.count).to eq 0      
@@ -62,6 +70,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
+        publish: true,
+        publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
       expect(response).to redirect_to admin_path
@@ -79,6 +89,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
+        publish: true,
+        publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
       expect(response).to redirect_to new_admin_session_path
@@ -97,6 +109,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
+        publish: true,
+        publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
       expect(response).to have_http_status(:not_found)
@@ -110,6 +124,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: '',
         content: 'changedstuff',
         category: 'Technical',
+        publish: true,
+        publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
       expect(response).to have_http_status(:unprocessable_entity)
