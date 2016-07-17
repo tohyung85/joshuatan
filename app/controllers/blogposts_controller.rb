@@ -2,7 +2,7 @@ class BlogpostsController < ApplicationController
   layout "blogposts"
   #use this layout for all
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.all.select(&:publish_date).sort_by(&:publish_date).reverse!
     @sidebar = 'sidebar-blog-background'
     render(:layout => "layouts/application")
     #Action specific layout
