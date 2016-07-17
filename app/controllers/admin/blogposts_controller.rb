@@ -36,9 +36,17 @@ class Admin::BlogpostsController < ApplicationController
     redirect_to admin_path
   end
 
+  def publish
+    @blogpost = Blogpost.find_by_id(params[:blogpost_id])
+    publish = !@blogpost.published
+    publish_date = publish == true ? Date.current() : nil
+    @blogpost.update_attributes({:published => publish, :publish_date => publish_date})
+    redirect_to admin_path
+  end
+
   private
 
   def blogpost_params
-    params.require(:blogpost).permit(:title, :content, :category, :image)
+    params.require(:blogpost).permit(:title, :content, :category, :image, :published, :publish_date)
   end
 end

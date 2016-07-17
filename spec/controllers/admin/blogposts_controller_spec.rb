@@ -1,6 +1,36 @@
 require 'rails_helper'
 
 RSpec.describe Admin::BlogpostsController, type: :controller do
+  let(:admin) {FactoryGirl.create(:admin)}
+  let(:blogpost) {FactoryGirl.create(:blogpost)}
+  let(:blogpost_published) {FactoryGirl.create(:blogpost, published: true, publish_date: Date.current())}
+
+  describe '#publish' do
+    context 'admin is signed in' do
+      it 'should set published in model to true and set publish date to current date' do
+        sign_in admin
+        get :publish, blogpost_id: blogpost.id
+        
+        blogpost.reload
+
+        expect(response).to redirect_to admin_path
+        expect(blogpost.published).to eq(true)
+        expect(blogpost.publish_date).to eq(Date.current())
+      end
+
+      it 'should unpublish if blog is already published' do
+        sign_in admin
+        get :publish, blogpost_id: blogpost_published.id 
+
+        blogpost_published.reload
+
+        expect(response).to redirect_to admin_path
+        expect(blogpost_published.published).to eq(false)
+        expect(blogpost_published.publish_date).to eq(nil)
+      end
+    end    
+  end
+
   describe 'blogposts#new' do
     render_views
     it 'should require admin to be logged in' do
@@ -23,7 +53,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Hello',
         content: 'Somemore stuff',
         category: 'Others',
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
@@ -38,7 +68,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: '',
         content: '',
         category: '',        
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png'))         
       }
@@ -51,7 +81,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Hacked',
         content: 'Inserting hack',
         category: 'Naughty business',        
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png'))         
       }
@@ -70,7 +100,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
@@ -89,7 +119,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
@@ -109,7 +139,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: 'Nice Post',
         content: 'changedstuff',
         category: 'Technical',
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
@@ -124,7 +154,7 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         title: '',
         content: 'changedstuff',
         category: 'Technical',
-        publish: true,
+        published: false,
         publish_date: 'Jul 17 2016',
         image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
       }
@@ -133,9 +163,8 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
       blogpost.reload
       
       expect(blogpost.title).to eq("Awesome Post")
-
-
     end
+
   end
 
   describe 'blogposts#edit' do     
