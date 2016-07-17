@@ -14,5 +14,3 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require ckeditor/init
-
-  console.log(CKEditor.version);
