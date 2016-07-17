@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714142527) do
+ActiveRecord::Schema.define(version: 20160717021732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,15 +37,17 @@ ActiveRecord::Schema.define(version: 20160714142527) do
   create_table "blogposts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "row_order"
     t.string   "category"
-    t.boolean  "published",  default: false
+    t.boolean  "published",    default: false
     t.string   "image"
+    t.date     "publish_date"
   end
 
   add_index "blogposts", ["id"], name: "index_blogposts_on_id", using: :btree
+  add_index "blogposts", ["publish_date"], name: "index_blogposts_on_publish_date", using: :btree
   add_index "blogposts", ["row_order"], name: "index_blogposts_on_row_order", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|

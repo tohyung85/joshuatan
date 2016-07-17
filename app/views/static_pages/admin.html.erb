@@ -4,22 +4,33 @@
   <section class="messages-section">
     <h2>Messages</h2>
     <% @messages.each do |message|  %>
-      <div class='messsage-box'>
-        <p><%= message.message %></p>
+      <div class='message-box'>
         <p><%= message.name %></p>
         <p><%= message.email %></p>
+        <p><%= message.message %></p>
       </div>
     <% end %>
   </section>
-
+  <br/><br/>
   <section class='blog-section'>
     <h2>Blogs</h2>
     <% @blogposts.each do |blogpost| %>
       <div class='blogpost-box'>
-        <p><%= blogpost.title %></p>
-        <%= link_to 'Edit Post', edit_admin_blogpost_path(blogpost), class: 'btn btn-warning'%>
-        <%= link_to 'Delete Post', admin_blogpost_path(blogpost), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-warning'%>
+        <div class='blog-text'>
+          <p><%= blogpost.title %></p>
+          <%= link_to 'View Post', blogpost_path(blogpost) %>
+        </div>
+        <div class='blog-buttons'>
+          <% if blogpost.published == false %>
+            <%= link_to 'Publish', admin_blogpost_publish_path(blogpost), class: 'btn btn-primary'%>
+          <% else %>
+            <%= link_to 'Unpublish', admin_blogpost_publish_path(blogpost), class: 'btn btn-warning'%>
+          <% end %>
+          <%= link_to 'Edit Post', edit_admin_blogpost_path(blogpost), class: 'btn btn-warning'%>
+          <%= link_to 'Delete Post', admin_blogpost_path(blogpost), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-warning'%>
+        </div>
       </div>
+      <br/>
     <% end %>
     <%= link_to 'New Post', new_admin_blogpost_path, class: 'btn btn-success' %>
   </section>

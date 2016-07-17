@@ -42,6 +42,7 @@
               <li><%= link_to 'Contact', new_contactmessage_path %>
               </li>
               <% if admin_signed_in? %>
+              <li><%= link_to 'Admin Page', admin_path %></li>
               <li><%= link_to 'Admin Sign Out', destroy_admin_session_path, method: :delete %></li>
               <% end %>          
             </ul>

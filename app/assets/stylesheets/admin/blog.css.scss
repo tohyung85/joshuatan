@@ -87,6 +87,82 @@
   padding-right: 25px;
 }
 
+.blogpost-box {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #616161;
+}
+
+.blog-text a {
+  color: black;
+  text-decoration: none;
+}
+
+.blog-text a:hover {
+  color: #5D5D5D;
+}
+
+.blog-index-box {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+}
+
+.page-content .blog-index-box h1{
+  width: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 50px;
+}
+
+.post-index-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-index-box {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #919191;
+}
+
+.post-index-box .post-index-title a{
+  font-size: 24px;
+}
+
+.post-index-box a{
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.post-index-box .post-index-title .post-author {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.post-index-box h2 {
+  margin: 0px;
+}
+
+.post-index-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.post-index-box a:hover {
+  color:#616161;
+}
+
+.blog-content {
+  padding: 30px;
+}
+
 @media (min-width: 992px){
   .sidebar {
       position: fixed;

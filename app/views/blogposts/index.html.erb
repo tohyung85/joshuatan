@@ -1,10 +1,23 @@
-<div class="blog-box">
-  <h1>Posts list</h1>
-  <% @blogposts.each do |post| %>
-    <%= link_to (blogpost_path(post)) do %>
-      <%= post.title %>
-      <%= post.category %>
-      <%= post.updated_at %>
+<div class="blog-index-box">
+  <h1>Blog Archive</h1>
+  <div class='post-index-container'>
+    <% @blogposts.each do |post| %>
+      <% if post.published? %>
+        <br/> 
+      <div class='post-index-box'>
+          <div class='post-index-title'>
+            <h2><%= link_to post.title, blogpost_path(post) %></h2>
+            <p><%= post.publish_date.strftime('%B %e %Y') %></p>
+            <p>BY <%= link_to 'JOSHUA TAN', root_path, class: 'post-author' %></p>              
+          </div>      
+          <div class='post-index-text'>
+            <%= truncate(strip_tags(post.content), length: 20, separator: ' ') %>
+          </div>
+
+          <p><%= link_to 'Read More', blogpost_path(post) %></p>
+      </div>   
+      <br/>
     <% end %>
   <% end %>
+  </div>
 </div>

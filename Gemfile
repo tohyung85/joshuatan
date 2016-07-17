@@ -56,6 +56,9 @@ gem 'carrierwave-aws'
 # Install Minimagick
 gem 'mini_magick', '~>4.3.1'
 
+# Install Ranked Model
+gem 'ranked-model'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
