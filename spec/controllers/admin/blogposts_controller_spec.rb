@@ -29,6 +29,24 @@ RSpec.describe Admin::BlogpostsController, type: :controller do
         expect(blogpost_published.publish_date).to eq(nil)
       end
     end    
+
+    context 'admin is not signed in' do
+      it 'should send user to login page' do
+        get :publish, blogpost_id: blogpost.id
+        expect(response).to redirect_to new_admin_session_path
+        expect(blogpost.published).to eq false
+        expect(blogpost.publish_date).to eq nil
+      end
+    end
+
+    context 'no blogpost available' do
+      it 'should return a 404 error' do
+        sign_in admin
+        get :publish, blogpost_id: 'someid'
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
   end
 
   describe 'blogposts#new' do

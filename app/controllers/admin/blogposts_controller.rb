@@ -38,6 +38,7 @@ class Admin::BlogpostsController < ApplicationController
 
   def publish
     @blogpost = Blogpost.find_by_id(params[:blogpost_id])
+    return render_not_found unless @blogpost.present?
     publish = !@blogpost.published
     publish_date = publish == true ? Date.current() : nil
     @blogpost.update_attributes({:published => publish, :publish_date => publish_date})

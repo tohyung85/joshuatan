@@ -10,6 +10,7 @@ class BlogpostsController < ApplicationController
 
   def show 
     @sidebar = 'sidebar-blog-background'
-    @blogpost = Blogpost.find(params[:id])
+    @blogpost = Blogpost.find_by_id(params[:id])
+    return render_not_found unless @blogpost.present?
   end
 end
