@@ -159,8 +159,17 @@
   color:#616161;
 }
 
-.blog-content {
+.blog-content p {
+  font-family: 'Josefin Sans', sans-serif;  
   padding: 30px;
+}
+
+.blog-content a{
+  color: black;  
+}
+
+.ckeditor-blogpost {
+  font-family: 'Josefin Sans', sans-serif !important;    
 }
 
 @media (min-width: 992px){
