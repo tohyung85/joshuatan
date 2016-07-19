@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get 'admin', to: 'static_pages#admin'
   resources :contactmessages, only: [:create, :new]
-  resources :blogposts, only: [:show, :index]
+  resources :blogposts, only: [:show, :index] do 
+    resources :comments, only: [:create]
+  end
   namespace :admin do
     resources :blogposts, only: [:new, :create, :update, :edit, :destroy] do
       get :publish

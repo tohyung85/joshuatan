@@ -6,5 +6,5 @@ class Blogpost < ActiveRecord::Base
   validates :image, presence: true
   CATEGORIES = ['Technical', 'Others']
 
-
+  has_many :comments, foreign_key: 'blog_id', dependent: :destroy
 end

@@ -25,10 +25,31 @@
   </div>
 
 <div class='blog-box'>
-
-
-  
   <div class='blog-content'>
     <%= @blogpost.content.html_safe %>
   </div>
+</div>
+
+<div class='comment-box'>
+  <div class='comments'>
+    <h2>Comments</h2>
+    <br/>
+    <% @comments.each do |comment| %>      
+    <div class='comment'>
+      <p><span><%= comment.name %></span> commented on <span><%=comment.created_at.strftime('%B %e %Y')%></span></p>
+      <p><%= comment.message %></p>      
+    </div>
+    <% end %>
+  </div>
+  <br/><br/>
+  <div class='comment-input'>
+    <%= simple_form_for Comment.new, url: blogpost_comments_path(@blogpost) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :message %>
+      <br/>
+      <%= f.submit 'Comment', class: 'btn btn-default', id: 'submit-button' %>
+    <% end %>
+  </div>
+
+
 </div>

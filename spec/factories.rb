@@ -19,5 +19,11 @@ FactoryGirl.define do
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) }
   end
 
+  factory :comment do
+    name 'John Doe'
+    message 'Nice post'
+    association :blogpost
+  end
+
   
 end
