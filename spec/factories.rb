@@ -16,7 +16,7 @@ FactoryGirl.define do
     category 'Others'
     published false
     publish_date nil
-    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) }
+    image Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'angrybirds.png')) 
   end
 
   factory :comment do
