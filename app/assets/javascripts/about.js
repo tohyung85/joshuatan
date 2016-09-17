@@ -9,8 +9,8 @@ $(function(){
   });
 
   $(".project").mouseover(function(){
-    var images = ['codingpals.png', 'todo.jpeg', 'newsstop.png', 'gameoflife.png'];
-    var links = ["https://coding-pals.herokuapp.com/","https://jt-todo.herokuapp.com/","https://jt-news-stop.herokuapp.com/","http://codepen.io/tohyung85/full/rxEZKy/"];
+    var images = ['codingpals.png', 'chess.jpeg', 'newsstop.png', 'gameoflife.png'];
+    var links = ["https://coding-pals.herokuapp.com/","http://chess-fusion.herokuapp.com/","https://jt-news-stop.herokuapp.com/","http://codepen.io/tohyung85/full/rxEZKy/"];
     var id = $(this).data("id") - 1;
     var imagePath = "/assets/" + images[id];
     var replacement = "<a href='" + links[id] + "'><img src='" + imagePath + "'/></a>";
@@ -21,6 +21,4 @@ $(function(){
         $(this).parent().children(".loading-circle").hide();
       });
   });
-  
-  console.log(CKEditor.version);
 });
